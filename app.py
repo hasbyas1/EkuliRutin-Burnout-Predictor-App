@@ -40,6 +40,7 @@ st.markdown("""
         padding-bottom: 0.4rem;
         margin: 1.5rem 0 1rem 0;
     }
+    
 </style>
 """, unsafe_allow_html=True)
 
@@ -185,7 +186,7 @@ def halaman_assessment():
             )
 
         # ---- PHQ-9 ----
-        st.markdown("<div class='section-title'>🧠 Kondisi Mental — PHQ-9</div>",
+        st.markdown("<div class='section-title'>🧠 Kondisi Mental: PHQ-9</div>",
                     unsafe_allow_html=True)
         st.caption("Dalam **2 minggu terakhir**, seberapa sering kamu mengalami hal berikut?")
         phq9_jawaban = []
@@ -195,7 +196,7 @@ def halaman_assessment():
             phq9_jawaban.append(PILIHAN[jawaban])
 
         # ---- GAD-7 ----
-        st.markdown("<div class='section-title'>😰 Kondisi Kecemasan — GAD-7</div>",
+        st.markdown("<div class='section-title'>😰 Kondisi Kecemasan: GAD-7</div>",
                     unsafe_allow_html=True)
         st.caption("Dalam **2 minggu terakhir**, seberapa sering kamu mengalami hal berikut?")
         gad7_jawaban = []
