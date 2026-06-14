@@ -108,10 +108,10 @@ GAD7 = [
 ]
 
 PILIHAN = {
-    "🟢 Tidak sama sekali"        : 0,
-    "🟡 Beberapa hari"            : 1,
-    "🟠 Lebih dari separuh waktu" : 2,
-    "🔴 Hampir setiap hari"       : 3,
+    "Tidak sama sekali"        : 0,
+    "Beberapa hari"            : 1,
+    "Lebih dari separuh waktu" : 2,
+    "Hampir setiap hari"       : 3,
 }
 
 # ---- HELPER: Tombol tema ----
