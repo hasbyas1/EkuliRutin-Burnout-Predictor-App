@@ -3,7 +3,17 @@
 COBA APLIKASINYA DI SINI! <br>
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Open%20App-FF4B4B?logo=streamlit&logoColor=white)](https://ekulirutin.streamlit.app)
 
+Presentasi Aplikasi: <br>
+[![YouTube](https://img.shields.io/badge/YouTube-Presentation%20Video-FF0000?logo=youtube&logoColor=white)](https://youtu.be/nn7vj3JV9Yg)
+
+Tutorial Penggunaan Aplikasi (bukan setup): <br>
+[![YouTube](https://img.shields.io/badge/YouTube-Demo%20Video-FF0000?logo=youtube&logoColor=white)](https://youtu.be/nn7vj3JV9Yg)
+
+---
+
 Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui asesmen mandiri menggunakan instrumen klinis PHQ-9, GAD-7, dan data perilaku kerja sehari-hari.
+
+Proyek ini berfokus pada pengembangan sistem asisten produktivitas berbasis kecerdasan buatan yang dirancang untuk membantu individu mengelola waktu dan aktivitas harian secara lebih efektif dan terstruktur. Dengan menerapkan model supervised learning, sistem akan menganalisis berbagai metrik gaya hidup, seperti durasi tidur, jam kerja, dan tingkat stres, untuk memprediksi probabilitas terjadinya kelelahan ekstrem (burnout) secara dini.
 
 ## Fitur
 - Asesmen 5–10 menit dengan antarmuka langkah demi langkah
