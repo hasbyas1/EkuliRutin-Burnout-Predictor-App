@@ -133,7 +133,7 @@ def halaman_landing():
     st.markdown("<br>", unsafe_allow_html=True)
     _, col_btn, _ = st.columns([1, 2, 1])
     with col_btn:
-        if st.button("🌿 Mulai Assessment"):
+        if st.button("🌿 Mulai Assessment", use_container_width=True):
             st.session_state.halaman = 'assessment'
             st.rerun()
 
@@ -321,12 +321,12 @@ def halaman_hasil():
     st.markdown("<br>", unsafe_allow_html=True)
     col_a, col_b = st.columns(2)
     with col_a:
-        if st.button("🔄 Ulangi Assessment"):
+        if st.button("🔄 Ulangi Assessment", use_container_width=True):
             st.session_state.halaman = 'assessment'
             st.session_state.hasil   = None
             st.rerun()
     with col_b:
-        if st.button("🏠 Kembali ke Beranda"):
+        if st.button("🏠 Kembali ke Beranda", use_container_width=True):
             st.session_state.halaman = 'landing'
             st.session_state.hasil   = None
             st.rerun()
