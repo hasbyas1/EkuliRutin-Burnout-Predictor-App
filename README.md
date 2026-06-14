@@ -4,7 +4,7 @@ COBA APLIKASINYA DI SINI! <br>
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Open%20App-FF4B4B?logo=streamlit&logoColor=white)](https://ekulirutin.streamlit.app)
 
 Presentasi Aplikasi: <br>
-[![YouTube](https://img.shields.io/badge/YouTube-Presentation%20Video-FF0000?logo=youtube&logoColor=white)](https://youtu.be/nn7vj3JV9Yg)
+[![YouTube](https://img.shields.io/badge/YouTube-Presentation%20Video-FF0000?logo=youtube&logoColor=white)](https://youtu.be/pZqv8l8R4_g)
 
 Tutorial Penggunaan Aplikasi (bukan setup): <br>
 [![YouTube](https://img.shields.io/badge/YouTube-Demo%20Video-FF0000?logo=youtube&logoColor=white)](https://youtu.be/nn7vj3JV9Yg)
