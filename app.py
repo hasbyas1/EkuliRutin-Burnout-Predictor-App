@@ -150,7 +150,7 @@ def halaman_landing():
 
     st.markdown("""
     <p style='text-align:center; color:#aaa; font-size:0.82rem; margin-top:2rem;'>
-    ⚠️ Aplikasi ini bukan pengganti diagnosis medis profesional dan masih dalam pengembangan.
+    ⚠️ Aplikasi ini bukan pengganti diagnosis medis profesional dan masih dalam pengembangan. <br>
                 - Muhammad Hasby As-shiddiqy
     </p>""", unsafe_allow_html=True)
 
@@ -373,7 +373,7 @@ def halaman_hasil():
 
     st.markdown("""
     <p style='text-align:center; color:#aaa; font-size:0.8rem; margin-top:2rem;'>
-    ⚠️ Hasil ini bukan diagnosis medis. Selalu konsultasikan kondisimu dengan profesional kesehatan.
+    ⚠️ Hasil ini bukan diagnosis medis. Selalu konsultasikan kondisimu dengan profesional kesehatan. <br>
                 - Muhammad Hasby As-shiddiqy
     </p>""", unsafe_allow_html=True)
 
