@@ -1,6 +1,6 @@
 # 🌿 EkuliRutin — Aplikasi Prediksi Risiko Burnout
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://burnoutcheck.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ekulirutin.streamlit.app)
 
 Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui asesmen mandiri menggunakan instrumen klinis PHQ-9, GAD-7, dan data perilaku kerja sehari-hari.
 
