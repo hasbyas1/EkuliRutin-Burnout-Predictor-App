@@ -23,11 +23,44 @@ Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui ase
 
 ## Menjalankan Secara Lokal
 
+### Prasyarat
+- Python 3.9 atau lebih baru
+- pip
+
+### Langkah-langkah
+
+**1. Clone repositori**
 ```bash
 git clone https://github.com/hasbyas1/EkuliRutin-Burnout-Predictor-App.git
 cd EkuliRutin-Burnout-Predictor-App
+```
+
+**2. Buat virtual environment (opsional tapi disarankan)**
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
+```
+
+**3. Install dependencies**
+```bash
 pip install -r requirements.txt
+```
+
+**4. Jalankan aplikasi**
+```bash
 streamlit run app.py
+```
+
+**5. Buka di browser**
+
+Streamlit akan otomatis membuka browser. Jika tidak, buka manual:
+```
+http://localhost:8501
 ```
 
 ## Deploy ke Streamlit Cloud
@@ -40,7 +73,7 @@ streamlit run app.py
 ## Struktur File
 burnout-predictor-app/ <br>
 ├── app.py <br>
-├── model_burnout_xgb_final.pkl <br>
+├── model_burnout_xgb_new2.pkl <br>
 ├── fitur_terpilih.json <br>
 ├── label_burnout.json <br>
 ├── requirements.txt <br>
