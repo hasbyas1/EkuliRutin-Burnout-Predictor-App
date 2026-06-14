@@ -1,6 +1,6 @@
-# 🌿 EkuliRutin — Aplikasi Prediksi Risiko Burnout
+# 🌿 EkuliRutin | Aplikasi Prediksi Risiko Burnout
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ekulirutin.streamlit.app)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Open%20App-FF4B4B?logo=streamlit&logoColor=white)](https://ekulirutin.streamlit.app)
 
 Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui asesmen mandiri menggunakan instrumen klinis PHQ-9, GAD-7, dan data perilaku kerja sehari-hari.
 
@@ -17,7 +17,7 @@ Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui ase
 - Kelas target: Low · Moderate · High
 
 > Model dilatih secara terpisah di repositori
-> [burnout-predictor-training](#).
+> [burnout-predictor-training](https://github.com/hasbyas1/EkuliRutin-Burnout-Predictor.git).
 > Hanya file model (`.pkl`) dan metadata (`.json`) yang disertakan di sini.
 
 ## 🚀 Menjalankan Secara Lokal
@@ -37,13 +37,13 @@ streamlit run app.py
 4. Klik **Deploy**
 
 ## 📁 Struktur File
-burnout-predictor-app/
-├── app.py
-├── model_burnout_xgb_final.pkl
-├── fitur_terpilih.json
-├── label_burnout.json
-├── requirements.txt
-└── README.md
+burnout-predictor-app/ <br>
+├── app.py <br>
+├── model_burnout_xgb_final.pkl <br>
+├── fitur_terpilih.json <br>
+├── label_burnout.json <br>
+├── requirements.txt <br>
+└── README.md <br>
 
 ## ⚠️ Disclaimer
 Aplikasi ini bersifat edukatif dan **bukan pengganti diagnosis medis
@@ -52,5 +52,5 @@ segera konsultasikan dengan tenaga kesehatan mental.
 
 ---
 
-## DICODING — CAPSTONE PROJECT
-**AIC117B6Y0044 — Muhammad Hasby As-shiddiqy**
+## DICODING | CAPSTONE PROJECT
+**AIC117B6Y0044 | Muhammad Hasby As-shiddiqy**
