@@ -1,4 +1,4 @@
-# 🌿 BurnoutCheck — Aplikasi Prediksi Risiko Burnout
+# 🌿 EkuliRutin — Aplikasi Prediksi Risiko Burnout
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://burnoutcheck.streamlit.app)
 
