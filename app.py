@@ -24,9 +24,9 @@ st.markdown("""
         width: 100%;
     }
     .stButton > button:hover { background-color: #388E3C; }
-    html, body, p, div { font-size: 16px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
+    html, body, p, div { font-size: 18px; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; }
     .card {
         background: white;
         border-radius: 12px;
