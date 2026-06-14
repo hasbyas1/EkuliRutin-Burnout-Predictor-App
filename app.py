@@ -110,7 +110,7 @@ def halaman_landing():
     st.markdown("""
     <div style='text-align:center; padding: 3rem 0 2rem 0;'>
         <div style='font-size:4rem;'>🌿</div>
-        <h1 style='color:#2E7D32; font-size:2.5rem; margin-bottom:0.5rem;'>BurnoutCheck</h1>
+        <h1 style='color:#2E7D32; font-size:2.5rem; margin-bottom:0.5rem;'>EkuliRutin - Burnout Predictor</h1>
         <p style='color:#555; font-size:1.1rem;'>Kenali tingkat risiko burnout-mu dalam 5-10 menit</p>
     </div>
     """, unsafe_allow_html=True)
