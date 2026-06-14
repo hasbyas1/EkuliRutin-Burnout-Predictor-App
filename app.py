@@ -24,6 +24,9 @@ st.markdown("""
         width: 100%;
     }
     .stButton > button:hover { background-color: #388E3C; }
+    html, body, p, div { font-size: 16px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
     .card {
         background: white;
         border-radius: 12px;
@@ -147,6 +150,9 @@ def halaman_landing():
 # HALAMAN ASSESSMENT
 # ============================================================
 def halaman_assessment():
+    if st.button("← Beranda"):
+        st.session_state.halaman = 'landing'
+        st.rerun()
     st.markdown("<h2 style='color:#2E7D32;'>📋 Assessment Burnout</h2>",
                 unsafe_allow_html=True)
     st.caption("Isi semua pertanyaan berdasarkan kondisimu dalam 2 minggu terakhir.")
