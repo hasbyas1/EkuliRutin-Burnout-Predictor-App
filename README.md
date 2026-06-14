@@ -2,9 +2,7 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://burnoutcheck.streamlit.app)
 
-Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini
-melalui asesmen mandiri menggunakan instrumen klinis PHQ-9, GAD-7,
-dan data perilaku kerja sehari-hari.
+Aplikasi web berbasis AI untuk mendeteksi risiko burnout secara dini melalui asesmen mandiri menggunakan instrumen klinis PHQ-9, GAD-7, dan data perilaku kerja sehari-hari.
 
 ## ✨ Fitur
 - Asesmen 5–10 menit dengan antarmuka langkah demi langkah
