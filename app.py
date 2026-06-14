@@ -4,6 +4,13 @@ import json
 import numpy as np
 import pandas as pd
 
+# ---- TEMA ----
+if 'tema' not in st.session_state:
+    st.session_state.tema = 'light'
+
+def toggle_tema():
+    st.session_state.tema = 'dark' if st.session_state.tema == 'light' else 'light'
+
 st.set_page_config(
     page_title="BurnoutCheck",
     page_icon="🌿",
@@ -11,42 +18,52 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-st.markdown("""
-<style>
-    .stButton > button {
+def inject_css():
+    is_dark  = st.session_state.tema == 'dark'
+    bg       = '#0E1117' if is_dark else '#F9FBF7'
+    card_bg  = '#1E2130' if is_dark else '#FFFFFF'
+    text     = '#FAFAFA' if is_dark else '#1E1E1E'
+    subtext  = '#aaa'    if is_dark else '#777'
+    border   = 'rgba(255,255,255,0.1)' if is_dark else 'rgba(0,0,0,0.08)'
+
+    st.markdown(f"""
+    <style>
+    .stApp {{ background-color: {bg} !important; }}
+    html, body, p, div, label {{ font-size: 17px; color: {text}; }}
+    h1 {{ font-size: 2.1rem; }}
+    h2 {{ font-size: 1.6rem; }}
+    .stButton > button {{
         background-color: #4CAF50;
         color: white;
         border: none;
         border-radius: 8px;
-        padding: 0.5rem 2rem;
         font-size: 1rem;
         font-weight: 600;
         width: 100%;
-    }
-    .stButton > button:hover { background-color: #388E3C; }
-    html, body, p, div { font-size: 17px; }
-    h1 { font-size: 2.1rem; }
-    h2 { font-size: 1.6rem; }
-    .card {
-        background: var(--secondary-background-color);
-        border: 1px solid rgba(128,128,128,0.2);
+    }}
+    .stButton > button:hover {{ background-color: #388E3C; }}
+    .card {{
+        background: {card_bg};
+        border: 1px solid {border};
         border-radius: 12px;
         padding: 1.5rem;
         margin: 0.5rem 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         text-align: center;
-    }
-    .section-title {
+    }}
+    .card p {{ color: {subtext}; font-size: 0.85rem; margin-top: 0.5rem; }}
+    .section-title {{
         color: #2E7D32;
         font-size: 1.2rem;
         font-weight: 600;
         border-bottom: 2px solid #A5D6A7;
         padding-bottom: 0.4rem;
         margin: 1.5rem 0 1rem 0;
-    }
-    
-</style>
-""", unsafe_allow_html=True)
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+
+inject_css()
 
 # ---- LOAD MODEL ----
 @st.cache_resource
@@ -91,21 +108,31 @@ GAD7 = [
 ]
 
 PILIHAN = {
-    "Tidak sama sekali"       : 0,
-    "Beberapa hari"           : 1,
-    "Lebih dari separuh waktu": 2,
-    "Hampir setiap hari"      : 3,
+    "🟢 Tidak sama sekali"        : 0,
+    "🟡 Beberapa hari"            : 1,
+    "🟠 Lebih dari separuh waktu" : 2,
+    "🔴 Hampir setiap hari"       : 3,
 }
+
+# ---- HELPER: Tombol tema ----
+def tombol_tema():
+    _, col_tema = st.columns([9, 1])
+    with col_tema:
+        emoji = "🌙" if st.session_state.tema == 'light' else "☀️"
+        st.button(emoji, on_click=toggle_tema, help="Ganti tema",
+                  key=f"btn_tema_{st.session_state.halaman}")
 
 # ============================================================
 # HALAMAN LANDING
 # ============================================================
 def halaman_landing():
+    tombol_tema()
+
     st.markdown("""
-    <div style='text-align:center; padding: 3rem 0 2rem 0;'>
+    <div style='text-align:center; padding: 2rem 0 2rem 0;'>
         <div style='font-size:4rem;'>🌿</div>
         <h1 style='color:#2E7D32; font-size:2.5rem; margin-bottom:0.5rem;'>BurnoutCheck</h1>
-        <p style='color:#555; font-size:1.1rem;'>Kenali tingkat risiko burnout-mu dalam 5–10 menit</p>
+        <p style='color:#888; font-size:1.1rem;'>Kenali tingkat risiko burnout-mu dalam 5–10 menit</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -115,24 +142,21 @@ def halaman_landing():
         <div class='card'>
             <div style='font-size:2rem;'>📋</div>
             <b>16 Pertanyaan Klinis</b>
-            <p style='color:#777; font-size:0.85rem; margin-top:0.5rem;'>
-            PHQ-9 & GAD-7 yang tervalidasi secara internasional</p>
+            <p>PHQ-9 & GAD-7 yang tervalidasi secara internasional</p>
         </div>""", unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div class='card'>
             <div style='font-size:2rem;'>🤖</div>
             <b>Berbasis AI</b>
-            <p style='color:#777; font-size:0.85rem; margin-top:0.5rem;'>
-            Model XGBoost dengan akurasi 75%</p>
+            <p>Model XGBoost dengan akurasi 75%</p>
         </div>""", unsafe_allow_html=True)
     with col3:
         st.markdown("""
         <div class='card'>
             <div style='font-size:2rem;'>🔒</div>
             <b>Privasi Terjaga</b>
-            <p style='color:#777; font-size:0.85rem; margin-top:0.5rem;'>
-            Data tidak disimpan atau dikirim ke pihak manapun</p>
+            <p>Data tidak disimpan atau dikirim ke pihak manapun</p>
         </div>""", unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -151,9 +175,14 @@ def halaman_landing():
 # HALAMAN ASSESSMENT
 # ============================================================
 def halaman_assessment():
-    if st.button("← Beranda"):
-        st.session_state.halaman = 'landing'
-        st.rerun()
+    tombol_tema()
+
+    col_back, _ = st.columns([1, 5])
+    with col_back:
+        if st.button("← Beranda"):
+            st.session_state.halaman = 'landing'
+            st.rerun()
+
     st.markdown("<h2 style='color:#2E7D32;'>📋 Assessment Burnout</h2>",
                 unsafe_allow_html=True)
     st.caption("Isi semua pertanyaan berdasarkan kondisimu dalam 2 minggu terakhir.")
@@ -165,14 +194,14 @@ def halaman_assessment():
                     unsafe_allow_html=True)
         col1, col2 = st.columns(2)
         with col1:
-            work_mode    = st.selectbox("Mode kerja", ["On-site", "Hybrid", "Remote"])
-            work_hours   = st.number_input("Jam kerja per minggu",
-                                           min_value=0, max_value=100, value=40)
-            meetings     = st.number_input("Rata-rata meeting per hari",
-                                           min_value=0, max_value=20, value=3)
+            work_mode  = st.selectbox("Mode kerja", ["On-site", "Hybrid", "Remote"])
+            work_hours = st.slider("Jam kerja per minggu",
+                                   min_value=0, max_value=80, value=40)
+            meetings   = st.slider("Rata-rata meeting per hari",
+                                   min_value=0, max_value=15, value=3)
         with col2:
-            vacation     = st.number_input("Hari cuti yang sudah diambil tahun ini",
-                                           min_value=0, max_value=365, value=0)
+            vacation     = st.slider("Hari cuti yang sudah diambil tahun ini",
+                                     min_value=0, max_value=30, value=0)
             uses_therapy = st.radio("Apakah kamu sedang menjalani terapi?",
                                     ["Tidak", "Ya"], horizontal=True)
 
@@ -252,6 +281,8 @@ def halaman_assessment():
 # HALAMAN HASIL
 # ============================================================
 def halaman_hasil():
+    tombol_tema()
+
     hasil  = st.session_state.hasil
     label  = hasil['label']
     score  = hasil['score']
@@ -293,7 +324,7 @@ def halaman_hasil():
     st.markdown("<br>**Skor Klinis:**", unsafe_allow_html=True)
     col4, col5 = st.columns(2)
     with col4:
-        st.metric("PHQ-9 (Depresi)",  f"{hasil['phq9_score']} / 27")
+        st.metric("PHQ-9 (Depresi)",   f"{hasil['phq9_score']} / 27")
     with col5:
         st.metric("GAD-7 (Kecemasan)", f"{hasil['gad7_score']} / 21")
 
@@ -320,7 +351,7 @@ def halaman_hasil():
     }
 
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown(f"<div class='section-title'>💡 Rekomendasi</div>",
+    st.markdown("<div class='section-title'>💡 Rekomendasi</div>",
                 unsafe_allow_html=True)
     for r in rekomen[label]:
         st.markdown(f"- {r}")
