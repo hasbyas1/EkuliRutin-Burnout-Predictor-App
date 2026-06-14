@@ -158,6 +158,31 @@ def halaman_landing():
 # HALAMAN ASSESSMENT
 # ============================================================
 def halaman_assessment():
+    import streamlit.components.v1 as components
+    components.html("""
+        <script>
+            function scrollTop() {
+                try {
+                    window.parent.scrollTo(0, 0);
+                    var sels = [
+                        'section.main',
+                        '[data-testid="stMain"]',
+                        '[data-testid="stAppViewContainer"]',
+                        '[data-testid="stAppViewBlockContainer"]',
+                        '.stApp'
+                    ];
+                    sels.forEach(function(s) {
+                        var el = window.parent.document.querySelector(s);
+                        if (el) el.scrollTop = 0;
+                    });
+                } catch(e) {}
+            }
+            scrollTop();
+            setTimeout(scrollTop, 100);
+            setTimeout(scrollTop, 300);
+            setTimeout(scrollTop, 600);
+        </script>
+    """, height=0)
     if st.button("← Beranda"):
         st.session_state.halaman = 'landing'
         st.rerun()
