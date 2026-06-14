@@ -28,7 +28,7 @@ Proyek ini berfokus pada pengembangan sistem asisten produktivitas berbasis kece
 - Kelas target: Low · Moderate · High
 
 > Model dilatih secara terpisah di repositori
-> [![GitHub](https://img.shields.io/badge/GitHub-EkulitRutin%20App-181717?logo=github&logoColor=white)](https://github.com/hasbyas1/EkuliRutin-Train.git)
+> [![GitHub](https://img.shields.io/badge/GitHub-EkulitRutin%20Train-181717?logo=github&logoColor=white)](https://github.com/hasbyas1/EkuliRutin-Train.git)
 > Hanya file model (`.pkl`) dan metadata (`.json`) yang disertakan di sini.
 
 ## Menjalankan Secara Lokal
