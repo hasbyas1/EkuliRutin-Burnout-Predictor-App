@@ -269,7 +269,7 @@ def halaman_hasil():
 
     # ---- PROGRESS BAR ----
     st.markdown(f"**Burnout Score: {score}%** &nbsp; (0% = tidak burnout, 100% = sangat burnout)")
-    st.progress(score / 100)
+    st.progress(float(min(1.0, max(0.0, score / 100))))
 
     # ---- PROBABILITAS ----
     st.markdown("<br>**Distribusi Probabilitas:**", unsafe_allow_html=True)
