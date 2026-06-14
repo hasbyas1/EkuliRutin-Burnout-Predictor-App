@@ -28,7 +28,8 @@ st.markdown("""
     h1 { font-size: 2.1rem; }
     h2 { font-size: 1.6rem; }
     .card {
-        background: white;
+        background: var(--secondary-background-color);
+        border: 1px solid rgba(128,128,128,0.2);
         border-radius: 12px;
         padding: 1.5rem;
         margin: 0.5rem 0;
