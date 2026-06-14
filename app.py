@@ -228,7 +228,7 @@ def halaman_assessment():
             proba         = model.predict_proba(input_data)[0]
             prediksi      = int(np.argmax(proba))
             bobot         = [0, 50, 100]
-            burnout_score = round(sum(p * b for p, b in zip(proba, bobot)), 1)
+            burnout_score = round(sum(p * b for p, b in zip(proba, bobot)), 2)
 
             st.session_state.hasil = {
                 'label'      : label_burnout[prediksi],
@@ -263,23 +263,23 @@ def halaman_hasil():
         <div style='font-size:3.5rem;'>{c["emoji"]}</div>
         <h1 style='color:{c["warna"]}; margin:0.5rem 0;'>{c["teks"]}</h1>
         <p style='color:#555; font-size:1.1rem; margin:0;'>
-            Burnout Score: <b style='color:{c["warna"]};'>{score}%</b>
+            Burnout Score: <b style='color:{c["warna"]};'>{score:.2f}%</b>
         </p>
     </div>""", unsafe_allow_html=True)
 
     # ---- PROGRESS BAR ----
-    st.markdown(f"**Burnout Score: {score}%** &nbsp; (0% = tidak burnout, 100% = sangat burnout)")
+    st.markdown(f"**Burnout Score: {score:.2f}%** &nbsp; (0% = tidak burnout, 100% = sangat burnout)")
     st.progress(float(min(1.0, max(0.0, score / 100))))
 
     # ---- PROBABILITAS ----
     st.markdown("<br>**Distribusi Probabilitas:**", unsafe_allow_html=True)
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric("🟢 Low",      f"{proba[0]*100:.1f}%")
+        st.metric("🟢 Low",      f"{proba[0]*100:.2f}%")
     with col2:
-        st.metric("🟡 Moderate", f"{proba[1]*100:.1f}%")
+        st.metric("🟡 Moderate", f"{proba[1]*100:.2f}%")
     with col3:
-        st.metric("🔴 High",     f"{proba[2]*100:.1f}%")
+        st.metric("🔴 High",     f"{proba[2]*100:.2f}%")
 
     # ---- SKOR KLINIS ----
     st.markdown("<br>**Skor Klinis:**", unsafe_allow_html=True)
