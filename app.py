@@ -306,7 +306,7 @@ def halaman_hasil():
             "Segera hubungi profesional kesehatan mental",
             "Bicarakan beban kerjamu dengan atasan atau HR",
             "Ambil cuti jika memungkinkan",
-            "Jangan hadapi ini sendirian — minta dukungan orang terdekat",
+            "Jangan hadapi ini sendirian, minta dukungan orang terdekat",
             "📞 Into The Light Indonesia: 119 ext 8",
         ],
     }
