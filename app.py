@@ -11,7 +11,7 @@ def toggle_tema():
     st.session_state.tema = 'dark' if st.session_state.tema == 'light' else 'light'
 
 st.set_page_config(
-    page_title="BurnoutCheck",
+    page_title="EkuliRutin - Burnout Predictor",
     page_icon="🌿",
     layout="centered",
     initial_sidebar_state="collapsed"
